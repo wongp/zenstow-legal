@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZenStow | Home Inventory, Made Calm</title>
+    <meta
+      name="description"
+      content="ZenStow is a local-first home inventory app that helps you organize rooms, containers, and items with fast search and optional account sync."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f5f8f8;
+        --surface: #ffffff;
+        --surface-soft: #f2ecdd;
+        --ink: #2d291e;
+        --ink-soft: #5f5a4c;
+        --line: #d8ccb2;
+        --primary: #d4af37;
+        --primary-ink: #5f4e19;
+        --accent: #3e6f74;
+        --radius-sm: 12px;
+        --radius-md: 18px;
+        --radius-lg: 26px;
+        --shadow: 0 18px 48px rgba(40, 33, 18, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Manrope", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(1000px 460px at 8% -8%, #fff6d9 0%, transparent 60%),
+          radial-gradient(680px 360px at 96% 12%, #d9ecee 0%, transparent 70%),
+          linear-gradient(180deg, #f9fcfb 0%, var(--bg) 54%, #f4efe4 100%);
+        line-height: 1.55;
+      }
+
+      .container {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(12px);
+        background: rgba(245, 248, 248, 0.8);
+        border-bottom: 1px solid rgba(216, 204, 178, 0.6);
+        z-index: 20;
+      }
+
+      .nav {
+        min-height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+      }
+
+      .brand span {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .nav-links {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        padding: 60px 0 36px;
+      }
+
+      .hero-wrap {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(20px, 4vw, 44px);
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.72);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      h1 {
+        margin: 14px 0 14px;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(2.2rem, 5.6vw, 4rem);
+        line-height: 1.07;
+        letter-spacing: -0.6px;
+      }
+
+      .hero p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 2.2vw, 1.14rem);
+        max-width: 58ch;
+      }
+
+      .cta-row {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        border-radius: 14px;
+        border: 1px solid transparent;
+        padding: 0 16px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        color: var(--primary-ink);
+        background: var(--primary);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.32);
+      }
+
+      .btn-ghost {
+        color: var(--ink-soft);
+        background: rgba(255, 255, 255, 0.72);
+        border-color: var(--line);
+      }
+
+      .hero-visual {
+        position: relative;
+      }
+
+      .phone-shot {
+        width: min(470px, 100%);
+        margin-inline: auto;
+        display: block;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(216, 204, 178, 0.92);
+        box-shadow: var(--shadow);
+      }
+
+      .pulse {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.35), transparent 70%);
+        filter: blur(5px);
+        top: -18px;
+        right: -8px;
+        pointer-events: none;
+      }
+
+      .section {
+        padding: 34px 0;
+      }
+
+      .section h2 {
+        margin: 0 0 18px;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(216, 204, 178, 0.85);
+        border-radius: var(--radius-md);
+        padding: 18px;
+        box-shadow: 0 9px 24px rgba(56, 47, 25, 0.08);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 1.06rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      .shots {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .shots img {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+        border: 1px solid rgba(216, 204, 178, 0.9);
+        box-shadow: 0 9px 22px rgba(36, 28, 11, 0.11);
+      }
+
+      .legal {
+        margin: 24px 0 48px;
+        background: linear-gradient(130deg, rgba(255, 255, 255, 0.82), rgba(242, 236, 221, 0.74));
+        border: 1px solid rgba(216, 204, 178, 0.92);
+        border-radius: var(--radius-md);
+        padding: 18px;
+      }
+
+      .legal h2 {
+        margin-top: 0;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .legal-links a {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .footer {
+        padding: 0 0 38px;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+      }
+
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      [data-reveal].in {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+      }
+
+      @media (max-width: 960px) {
+        .hero-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .features,
+        .shots {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          min-height: 62px;
+        }
+
+        .nav-links {
+          gap: 12px;
+          font-size: 0.92rem;
+        }
+
+        .hero {
+          padding-top: 34px;
+        }
+
+        .features,
+        .shots {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="ZenStow home">
+          <img src="assets/branding/app_icon_variant_dark_large.svg" alt="ZenStow logo" />
+          <span>ZenStow</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#screens">Screens</a>
+          <a href="privacy-policy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-wrap">
+          <div data-reveal>
+            <span class="eyebrow">Home Inventory App</span>
+            <h1>Know what you own. Find it in seconds.</h1>
+            <p>
+              ZenStow helps you organize rooms, containers, and items in one calm workspace.
+              It is built local-first, with optional account sync when you want your inventory
+              across devices.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://github.com/wongp/birdle" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a class="btn btn-ghost" href="privacy-policy.html">Read Privacy Policy</a>
+            </div>
+          </div>
+          <div class="hero-visual" data-reveal>
+            <span class="pulse" aria-hidden="true"></span>
+            <img
+              class="phone-shot"
+              src="assets/branding/play-console/final/screenshots/phone/phone-v3-02-home.png"
+              alt="ZenStow home inventory screen"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="features">
+        <h2 data-reveal>Designed for everyday use</h2>
+        <div class="features">
+          <article class="card" data-reveal>
+            <h3>Room to item hierarchy</h3>
+            <p>Create rooms, add containers, and attach items so storage always reflects your real home layout.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Fast inventory search</h3>
+            <p>Jump directly to matching results and quickly navigate back to the exact item you need.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Optional cloud sync</h3>
+            <p>Use the app without an account, or sign in to sync inventory data and eligible photos across devices.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="screens">
+        <h2 data-reveal>Real app screens</h2>
+        <div class="shots">
+          <img data-reveal src="assets/branding/play-console/final/screenshots/phone/phone-v3-01-start.png" alt="ZenStow start screen" />
+          <img data-reveal src="assets/branding/play-console/final/screenshots/phone/phone-v3-03-room-kitchen.png" alt="ZenStow room details screen" />
+          <img data-reveal src="assets/branding/play-console/final/screenshots/phone/phone-v3-04-room-storage.png" alt="ZenStow storage room screen" />
+        </div>
+      </section>
+
+      <section class="container legal" data-reveal>
+        <h2>Legal and support</h2>
+        <p>
+          ZenStow is operated by Patrick Wong. Questions or privacy requests:
+          <a href="mailto:zenstow.business@gmail.com">zenstow.business@gmail.com</a>.
+        </p>
+        <div class="legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="mailto:zenstow.business@gmail.com?subject=ZenStow%20Support">Support</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">© 2026 ZenStow. All rights reserved.</footer>
+
+    <script>
+      const nodes = document.querySelectorAll("[data-reveal]");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.18 }
+      );
+      nodes.forEach((node) => observer.observe(node));
+    </script>
+  </body>
+</html>
+
