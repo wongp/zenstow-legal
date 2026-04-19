@@ -249,6 +249,67 @@
         box-shadow: 0 9px 22px rgba(36, 28, 11, 0.11);
       }
 
+      .product {
+        margin: 18px auto 0;
+        background: linear-gradient(150deg, rgba(62, 111, 116, 0.12), rgba(255, 255, 255, 0.9));
+        border: 1px solid rgba(62, 111, 116, 0.24);
+        border-radius: var(--radius-lg);
+        padding: clamp(20px, 3vw, 30px);
+      }
+
+      .product-wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .product p {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      .store-row {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .store-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 190px;
+        height: 56px;
+        border-radius: 12px;
+        overflow: hidden;
+        line-height: 0;
+        background: #000;
+      }
+
+      .store-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .product-points {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+      }
+
+      .product-points li + li {
+        margin-top: 8px;
+      }
+
+      .product-note {
+        margin-top: 14px;
+        font-size: 0.9rem;
+      }
+
       .legal {
         margin: 24px 0 48px;
         background: linear-gradient(130deg, rgba(255, 255, 255, 0.82), rgba(242, 236, 221, 0.74));
@@ -294,6 +355,10 @@
           grid-template-columns: 1fr;
         }
 
+        .product-wrap {
+          grid-template-columns: 1fr;
+        }
+
         .features,
         .shots {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -329,11 +394,11 @@
           <span>ZenStow</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
+          <a href="#product">Product</a>
           <a href="#features">Features</a>
           <a href="#screens">Screens</a>
           <a href="privacy-policy.html">Privacy</a>
           <a href="terms-of-service.html">Terms</a>
-          <a href="support.html">Support</a>
         </nav>
       </div>
     </header>
@@ -386,6 +451,51 @@
           <img data-reveal src="assets/branding/phone-v3-01-start.png" alt="ZenStow start screen" />
           <img data-reveal src="assets/branding/phone-v3-03-room-kitchen.png" alt="ZenStow room details screen" />
           <img data-reveal src="assets/branding/phone-v3-04-room-storage.png" alt="ZenStow storage room screen" />
+        </div>
+      </section>
+
+      <section class="section container" id="product">
+        <div class="product" data-reveal>
+          <div class="product-wrap">
+            <div>
+              <h2>Get the app</h2>
+              <p>
+                Download ZenStow on your phone to know what you own and where it is. Organize items by room and container,
+                add photos, and find things fast with search. Start free and keep your inventory local-first.
+              </p>
+              <div class="store-row">
+                <a
+                  class="store-badge"
+                  href="https://apps.apple.com/us/app/zenstow-home-inventory/id6762416931"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download on the App Store"
+                >
+                  <img
+                    src="assets/branding/apple.store.svg"
+                    alt="Download on the App Store"
+                  />
+                </a>
+                <a
+                  class="store-badge"
+                  href="https://play.google.com/store/apps/details?id=com.patrickwong.zenflow.home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get it on Google Play"
+                >
+                  <img
+                    src="assets/branding/google.store.png"
+                    alt="Get it on Google Play"
+                  />
+                </a>
+              </div>
+            </div>
+            <ul class="product-points">
+              <li>Track rooms, containers, and items in one place.</li>
+              <li>Attach photos and details so everything is easy to identify later.</li>
+              <li>Use optional sync when you want access across multiple devices.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
