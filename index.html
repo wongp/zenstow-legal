@@ -301,6 +301,59 @@
         font-size: 0.9rem;
       }
 
+      .launches {
+        margin-top: 6px;
+      }
+
+      .launches p {
+        margin: 0 0 14px;
+        color: var(--ink-soft);
+      }
+
+      .launch-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .launch-item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .launch-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(216, 204, 178, 0.9);
+        border-radius: 14px;
+        padding: 10px;
+        min-height: 72px;
+        box-shadow: 0 7px 18px rgba(36, 28, 11, 0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .launch-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px rgba(36, 28, 11, 0.12);
+      }
+
+      .launch-badge img {
+        width: 100%;
+        max-height: 54px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .launch-label {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+
       .legal {
         background: linear-gradient(130deg, rgba(255, 255, 255, 0.82), rgba(242, 236, 221, 0.74));
         border: 1px solid rgba(216, 204, 178, 0.92);
@@ -354,6 +407,10 @@
         .shots {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
+        .launch-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       @media (max-width: 640px) {
@@ -374,6 +431,10 @@
         .shots {
           grid-template-columns: 1fr;
         }
+
+        .launch-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -388,6 +449,7 @@
           <a href="#product">Product</a>
           <a href="#features">Features</a>
           <a href="#screens">Screens</a>
+          <a href="#launches">Launches</a>
           <a href="privacy-policy.html">Privacy</a>
           <a href="terms-of-service.html">Terms</a>
         </nav>
@@ -487,6 +549,25 @@
               <li>Use optional sync when you want access across multiple devices.</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="section container launches" id="launches">
+        <h2 data-reveal>Featured Launches</h2>
+        <p data-reveal>Duplicate a launch item block to add more badges in a consistent layout.</p>
+        <div class="launch-grid">
+          <article class="launch-item" data-reveal>
+            <a
+              class="launch-badge"
+              href="https://www.uneed.best/tool/zenstow-home-inventory"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ZenStow on Uneed"
+            >
+              <img src="https://www.uneed.best/EMBED3.png" alt="Uneed Embed Badge" />
+            </a>
+            <p class="launch-label">Uneed</p>
+          </article>
         </div>
       </section>
 
