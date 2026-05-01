@@ -40,7 +40,8 @@
       }
 
       h1,
-      h2 {
+      h2,
+      h3 {
         line-height: 1.25;
         margin: 0 0 10px;
       }
@@ -52,6 +53,11 @@
       h2 {
         margin-top: 24px;
         font-size: 1.08rem;
+      }
+
+      h3 {
+        margin-top: 16px;
+        font-size: 1rem;
       }
 
       p,
@@ -84,7 +90,7 @@
     <main class="wrap">
       <article class="card">
         <h1>ZenStow Privacy Policy</h1>
-        <p class="meta"><strong>Effective date:</strong> April 6, 2026</p>
+        <p class="meta"><strong>Effective date:</strong> May 1, 2026</p>
         <p class="meta">
           ZenStow is operated by Patrick Wong. Contact:
           <a href="mailto:zenstow.business@gmail.com">zenstow.business@gmail.com</a>
@@ -97,201 +103,185 @@
 
         <h2>1. Scope</h2>
         <p>
-          This policy applies to the ZenStow app, including supported mobile
-          and web builds.
+          This policy applies to ZenStow, including supported mobile and web
+          builds.
         </p>
 
         <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Information you enter</h3>
         <p>
-          ZenStow stores inventory-related content you enter, such as room
-          names, container names, item names, item quantities, item prices,
-          item photo references, and app preferences (for example, display,
-          sound, and theme preferences).
+          We may collect information you enter in the app, such as:
+        </p>
+        <ul>
+          <li>room, container, and item names</li>
+          <li>item quantities and prices</li>
+          <li>item photo references</li>
+          <li>app preferences (for example, display, sound, and theme settings)</li>
+        </ul>
+
+        <h3>2.2 Account and sign-in information</h3>
+        <p>
+          ZenStow can be used without an account. If you sign in, we may
+          process:
+        </p>
+        <ul>
+          <li>email address</li>
+          <li>sign-in credentials needed to authenticate your account</li>
+          <li>basic profile data provided by your chosen sign-in method</li>
+        </ul>
+
+        <h3>2.3 Photos</h3>
+        <p>If you choose to attach photos to items, ZenStow may:</p>
+        <ul>
+          <li>access your camera to capture photos</li>
+          <li>access your photo library to select photos</li>
+          <li>store photos on your device for display</li>
+          <li>
+            when signed in, store eligible photos in account-linked cloud
+            storage for sync
+          </li>
+        </ul>
+
+        <h3>2.4 Purchase information</h3>
+        <p>
+          ZenStow offers optional in-app purchases on supported mobile
+          platforms.
         </p>
         <p>
-          ZenStow can be used without an account. If you choose to sign in,
-          ZenStow uses Supabase Auth and may process your email address,
-          authentication credentials needed for sign-in (for example, password
-          for email sign-in, processed by Supabase Auth), and authentication
-          provider data (for example, Google account identifier/profile metadata
-          when you sign in with Google).
+          Payments are processed by platform purchase providers. ZenStow does
+          not receive or store full payment card details.
+        </p>
+        <p>We may process purchase metadata, such as:</p>
+        <ul>
+          <li>product identifier</li>
+          <li>
+            purchase status (for example, pending, purchased, restored,
+            canceled, or error)
+          </li>
+          <li>transaction identifiers</li>
+          <li>purchase verification data and related error metadata</li>
+        </ul>
+
+        <h3>2.5 Usage and diagnostics</h3>
+        <p>
+          We may collect app usage, performance, and crash diagnostics to
+          improve reliability and functionality. This may include technical
+          device/app context, event metadata, and pseudonymous identifiers.
         </p>
         <p>
-          If you choose to attach photos to items, ZenStow can open your camera
-          or system photo picker, store selected photos locally on your device,
-          and (when signed in) upload eligible photos to Supabase Storage for
-          cross-device sync. Some local-only photo formats or references may
-          remain on-device only if they cannot be uploaded.
+          For feature analytics and troubleshooting, usage events may include
+          user-entered labels tied to in-app actions (for example, room,
+          container, item, and search labels).
         </p>
+
+        <h3>2.6 Feedback information</h3>
+        <p>If you send in-app feedback, we may collect:</p>
+        <ul>
+          <li>feedback message</li>
+          <li>optional contact email</li>
+          <li>app version, platform, and timestamps</li>
+        </ul>
+
+        <h3>2.7 Runtime configuration and update checks</h3>
         <p>
-          ZenStow offers optional in-app purchases on supported iOS and Android
-          builds, including tips, unlimited photos, and item-capacity packs.
+          ZenStow may fetch runtime configuration and update-related values,
+          which may involve standard technical app metadata.
         </p>
-        <p>
-          When you make an in-app purchase, payment processing is handled by
-          Apple App Store or Google Play. ZenStow does not receive or store
-          full payment card details.
-        </p>
-        <p>
-          ZenStow may process purchase metadata returned by store APIs,
-          including product identifier, purchase status/result (for example,
-          attempted, pending, purchased, restored, canceled, error),
-          transaction identifiers, purchase token/verification payload data,
-          and platform/source/error metadata.
-        </p>
-        <p>
-          ZenStow uses Firebase Analytics to collect basic app usage events (for
-          example, feature interactions and screen-level usage) to understand
-          product usage and improve the app.
-        </p>
-        <p>
-          This analytics setup includes event metadata (for example, event name,
-          timestamp, app environment, app version/build), a pseudonymous install
-          identifier generated by the app, and interaction metadata that may
-          include user-entered labels (for example, room/container/item names
-          and search labels) when those values are tracked.
-        </p>
-        <p>
-          In production, ZenStow uses Firebase Crashlytics to collect crash and
-          stability diagnostics (for example, crash traces and technical
-          device/app context) so we can detect and fix app issues.
-        </p>
-        <p>
-          If you choose to send in-app feedback, your feedback message is sent
-          to our Firebase backend (Cloud Firestore) together with optional
-          contact email (if provided), a pseudonymous install identifier, app
-          environment (dev/prod), app version, platform, and timestamps.
-        </p>
-        <p>
-          ZenStow uses Firebase Remote Config for runtime configuration
-          (for example, update policy values). This may involve standard
-          technical/app metadata associated with config fetches.
-        </p>
+
+        <h3>2.8 Information we do not sell or share for ads</h3>
         <p>
           ZenStow does not sell personal information and does not share personal
           information for cross-context behavioral advertising.
         </p>
 
         <h2>3. How Information Is Used</h2>
+        <p>We use information to:</p>
         <ul>
-          <li>Provide core app features for inventory organization</li>
-          <li>Save your data and settings on your device</li>
-          <li>
-            If signed in, sync inventory data and eligible photos to
-            account-backed cloud storage
-          </li>
-          <li>Maintain and improve app functionality</li>
-          <li>Review and respond to in-app feedback</li>
-          <li>
-            Process and restore optional in-app purchases
-          </li>
-          <li>
-            Apply runtime configuration, including update policy checks
-          </li>
+          <li>provide core app features</li>
+          <li>save your data and settings</li>
+          <li>support account-linked sync when you sign in</li>
+          <li>process and restore in-app purchases</li>
+          <li>review and respond to feedback</li>
+          <li>maintain and improve app reliability and performance</li>
+          <li>process account deletion requests</li>
+          <li>comply with legal obligations and protect service integrity</li>
         </ul>
 
         <h2>4. Data Storage and Retention</h2>
-        <p>
-          ZenStow is local-first and also supports optional account sync.
-        </p>
-        <p>
-          Local app data is stored on-device (for example, inventory snapshot,
-          settings, analytics install ID, and other operational app metadata).
-        </p>
-        <p>
-          If you sign in, inventory records and eligible item photos may be
-          stored in Supabase database/object storage to support sync.
-        </p>
-        <p>
-          ZenStow may store account sync metadata in Supabase (for example,
-          sync status/fingerprint metadata).
-        </p>
-        <p>
-          If you are signed in when purchase events are tracked, ZenStow stores
-          purchase-event metadata in Supabase to support entitlement/restore
-          logic.
-        </p>
-        <p>
-          In-app feedback submissions are stored in Firebase Cloud Firestore to
-          help us review feedback and improve the app.
-        </p>
-        <p>
-          Analytics and crash diagnostics are processed through Google Firebase
-          services.
-        </p>
-        <p>
-          Payment methods and store purchase records are managed by Apple App
-          Store or Google Play under your store account.
-        </p>
-        <p>
-          When you sign out, ZenStow clears local inventory data on that
-          device.
-        </p>
+        <p>ZenStow is local-first and supports optional account sync.</p>
+        <ul>
+          <li>Local app data is stored on your device.</li>
+          <li>
+            If you sign in, account-linked inventory data and eligible photos
+            may be stored in cloud services to support sync.
+          </li>
+          <li>
+            Purchase metadata, feedback records, and diagnostics may be stored
+            by service providers used to operate app features.
+          </li>
+          <li>
+            On sign-out, ZenStow generally clears local inventory data on that
+            device. If unsynced local changes are pending, ZenStow may
+            temporarily retain local inventory data to reduce data-loss risk.
+          </li>
+          <li>
+            If you request account deletion, account-linked data is removed from
+            active systems, and limited operational records related to deletion
+            workflows may be retained for up to 30 days before final cleanup.
+          </li>
+        </ul>
 
         <h2>5. Sharing and Disclosure</h2>
         <p>
-          ZenStow does not sell personal information and does not share personal
+          We do not sell personal information and do not share personal
           information for targeted advertising.
         </p>
         <p>
           Information may be processed by service providers used to operate app
-          features.
+          features, such as:
         </p>
-        <p>
-          Supabase is used for authentication, synced inventory/photos, and
-          purchase-event metadata.
-        </p>
-        <p>
-          Google Firebase is used for analytics, crash diagnostics, feedback
-          storage, and remote configuration.
-        </p>
-        <p>
-          Apple App Store and Google Play are used for app distribution and
-          in-app purchase processing.
-        </p>
+        <ul>
+          <li>authentication and account services</li>
+          <li>cloud data storage and sync services</li>
+          <li>analytics and diagnostics services</li>
+          <li>feedback management services</li>
+          <li>app distribution and in-app purchase providers</li>
+        </ul>
         <p>
           We may disclose information if required by law or to protect rights,
-          safety, or the integrity of the service.
+          safety, or service integrity.
         </p>
 
-        <h2>6. Google User Data</h2>
+        <h2>6. Third-Party Sign-In Data</h2>
         <p>
-          Google user data accessed through Google sign-in is used only for
-          app functionality such as authentication and account-linked usage.
+          Data received from third-party sign-in providers is used only for
+          authentication and account-related app functionality.
         </p>
         <p>
-          ZenStow does not sell Google user data. ZenStow does not use Google
-          user data for targeted advertising, data brokerage, creditworthiness,
-          lending, or generalized AI/ML model training.
+          We do not use this data for targeted advertising, data brokerage,
+          credit decisions, lending, or generalized AI/ML model training.
         </p>
         <p>
-          If you revoke ZenStow access from your Google account, future Google
-          sign-in authorization will require a new consent. You can manage app
-          access at
-          <a href="https://myaccount.google.com/permissions"
-            >Google Account permissions</a
-          >.
+          You can manage connected app access in your account settings with your
+          sign-in provider.
         </p>
 
         <h2>7. Data Protection and Security</h2>
         <p>
-          ZenStow uses reasonable technical safeguards to protect data,
-          including encrypted transport (HTTPS/TLS) for supported network
-          requests and provider security controls offered by Supabase and
-          Firebase services.
+          ZenStow uses reasonable technical safeguards, including encrypted
+          network transport where supported.
         </p>
-        <p>
-          No method of transmission or storage is completely secure, but we
-          work to reduce risk and respond to reliability or security issues as
-          they are identified.
-        </p>
+        <p>No method of transmission or storage is completely secure.</p>
 
         <h2>8. Permissions</h2>
         <p>
-          ZenStow may request camera and photo-library access where required by
-          the platform so you can capture or select item photos. ZenStow does
-          not request microphone, contacts, or location access for core
-          functionality.
+          ZenStow may request camera and photo-library permissions so you can
+          capture or select item photos.
+        </p>
+        <p>
+          ZenStow does not request microphone, contacts, or location access for
+          core functionality.
         </p>
 
         <h2>9. Children</h2>
@@ -304,8 +294,8 @@
           deletion, or information about data practices.
         </p>
         <p>
-          California residents: ZenStow does not sell or share personal
-          information for cross-context behavioral advertising.
+          For California residents, we do not sell or share personal information
+          for cross-context behavioral advertising.
         </p>
         <p>
           To submit a privacy request, contact
@@ -314,23 +304,25 @@
 
         <h2 id="data-deletion-requests">11. Data Deletion Requests</h2>
         <p>
-          To request deletion of data associated with ZenStow feedback
-          submissions, analytics identifiers, or account-linked sync data, use
-          this link:
+          To request deletion of data associated with feedback submissions,
+          diagnostics identifiers, or account-linked sync data, use this link:
           <a
             href="mailto:zenstow.business@gmail.com?subject=ZenStow%20Data%20Deletion%20Request"
             >Request data deletion</a
           >.
         </p>
         <p>
-          Please include any details that help identify your request, such as
-          your install identifier (if available), account email (if used), and
-          approximate date/time.
+          Please include details that help identify your request (for example,
+          account email and approximate date/time).
+        </p>
+        <p>
+          Signed-in users can also initiate account deletion in-app from
+          Settings (<code>Delete account</code>).
         </p>
         <p>
           For in-app purchase history, you can also manage or request records
-          through your Apple App Store or Google Play account, since those
-          providers process and retain store transaction records.
+          through your platform purchase account, since those providers process
+          and retain purchase transaction records.
         </p>
 
         <h2>12. International Users</h2>
@@ -342,8 +334,8 @@
 
         <h2>13. Changes to This Policy</h2>
         <p>
-          This Privacy Policy may be updated from time to time. The effective
-          date at the top will be revised when updates are made.
+          We may update this Privacy Policy from time to time. We will update
+          the "Effective date" above when changes are made.
         </p>
 
         <h2>14. Contact</h2>
