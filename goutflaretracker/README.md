@@ -1,6 +1,6 @@
 # Website
 
-Static marketing page for publishing under `zenstow.dev/goutflaretracker`.
+Static marketing page for publishing under `goutflaretracker`.
 
 Files:
 

@@ -43,9 +43,9 @@ img {
 .topbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 34px;
 }
 
 .brand {
@@ -67,7 +67,6 @@ img {
 }
 
 .brand-name,
-.top-link,
 .eyebrow,
 .shot-kicker {
   letter-spacing: 0.06em;
@@ -76,13 +75,6 @@ img {
 
 .brand-name {
   font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.top-link {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -272,8 +264,10 @@ h3 {
 }
 
 .phone-frame {
+  width: min(100%, 360px);
   margin: 0;
   padding: 14px;
+  justify-self: center;
   border-radius: 42px;
   background:
     linear-gradient(180deg, rgba(11, 107, 100, 0.12), rgba(255, 255, 255, 0.9));
@@ -282,6 +276,10 @@ h3 {
 }
 
 .phone-frame img {
+  width: 100%;
+  aspect-ratio: 430 / 932;
+  object-fit: cover;
+  object-position: top center;
   border-radius: 28px;
 }
 
@@ -315,8 +313,6 @@ h3 {
   }
 
   .topbar {
-    flex-direction: column;
-    align-items: flex-start;
     margin-bottom: 28px;
   }
 
