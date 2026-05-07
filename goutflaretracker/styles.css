@@ -79,8 +79,6 @@ img {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   gap: 28px;
   align-items: start;
   padding: 26px 0 12px;
@@ -143,7 +141,6 @@ h3 {
 }
 
 h1 {
-  max-width: 12ch;
   margin-top: 10px;
   font-size: clamp(3rem, 6vw, 5.6rem);
 }
@@ -303,6 +300,7 @@ h3 {
   .hero-copy,
   .hero-card {
     padding: 28px;
+    margin-bottom: 40px;
   }
 }
 
