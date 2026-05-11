@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem C:\\\\Users\\\\Patrick\\\\dev\\\\zenstow-legal -Recurse | Where-Object { $_.Name -match \"gout\" -or $_.FullName -match \"gout\" })",
+      "WebSearch",
+      "WebFetch(domain:firebase.google.com)"
+    ]
+  }
+}
